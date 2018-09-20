@@ -18,10 +18,7 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner scanner = new Scanner(System.in);
-        String name;
-        name = scanner.nextLine();
-        System.out.println("Hello world I am " + name);
+        System.out.print("Hello World This is TDTU");
     }
     
 }
