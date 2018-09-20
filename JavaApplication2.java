@@ -18,7 +18,9 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hello World This is TDTU");
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        System.out.println("Hello World I am " + name);
     }
     
 }
