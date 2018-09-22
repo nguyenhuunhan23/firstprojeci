@@ -29,7 +29,7 @@ public class JavaApplication2 {
         try {
             scanner = new Scanner(f);
             String scan;
-            scan = scanner.next();
+            scan = scanner.nextLine();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
