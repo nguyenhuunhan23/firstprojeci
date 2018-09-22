@@ -5,7 +5,11 @@
  */
 package javaapplication2;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,9 +22,22 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        System.out.println("Hello World I am " + name);
+        System.out.println("Hello World This is TDTU");
+        File f = new File("data.txt");
+        Scanner scanner = null;
+
+        try {
+            scanner = new Scanner(f);
+            String scan;
+            scan = scanner.next();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (scanner != null) {
+                scanner.close();
+            }
+        }
+
     }
-    
+
 }
