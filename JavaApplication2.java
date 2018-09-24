@@ -26,22 +26,22 @@ public class JavaApplication2 {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         System.out.println("Hello World This is TDTU");
-        File f = new File("data.txt");
+        File f = new File("data.txt"); // data
         BufferedReader br = null;
-        int counter = 0;
+        int counter = 0; // counter to count number of students
 
         try {
             br = new BufferedReader(new FileReader(f));
             String line;
-            while ((line = br.readLine()) != null) {
-                System.out.println("Hello I am " + line);
+            while ((line = br.readLine()) != null) { // read line by line
+                System.out.println("Hello I am " + line); // print name after reading line
                 ++counter;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // file not found , null pointer , tec
         } finally {
             if (br != null) {
-                br.close();
+                br.close(); // close when finish reading
             }
         }
         System.out.println("Total " + counter + " Students");
