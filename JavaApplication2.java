@@ -5,8 +5,11 @@
  */
 package javaapplication2;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,24 +23,23 @@ public class JavaApplication2 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // TODO code application logic here
         System.out.println("Hello World This is TDTU");
         File f = new File("data.txt");
-        Scanner scanner = null;
+        BufferedReader br = null;
 
         try {
-            scanner = new Scanner(f);
-            String scan;
-            while (scanner.hasNext()){
-                scan = scanner.nextLine();
-                System.out.println("Hello I am " + scan);
+            br = new BufferedReader(new FileReader(f));
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println("Hello I am " + line);
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            if (scanner != null) {
-                scanner.close();
+            if (br != null) {
+                br.close();
             }
         }
 
