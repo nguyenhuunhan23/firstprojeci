@@ -28,12 +28,14 @@ public class JavaApplication2 {
         System.out.println("Hello World This is TDTU");
         File f = new File("data.txt");
         BufferedReader br = null;
+        int counter = 0;
 
         try {
             br = new BufferedReader(new FileReader(f));
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println("Hello I am " + line);
+                counter++;
             }
         } catch (Exception e) {
             e.printStackTrace();
