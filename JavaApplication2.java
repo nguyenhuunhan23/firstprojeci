@@ -35,7 +35,7 @@ public class JavaApplication2 {
             String line;
             while ((line = br.readLine()) != null) {
                 System.out.println("Hello I am " + line);
-                counter++;
+                ++counter;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -44,6 +44,7 @@ public class JavaApplication2 {
                 br.close();
             }
         }
+        System.out.println("Total " + counter + " Students");
 
     }
 
