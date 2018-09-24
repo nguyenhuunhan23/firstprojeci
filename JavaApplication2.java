@@ -29,7 +29,10 @@ public class JavaApplication2 {
         try {
             scanner = new Scanner(f);
             String scan;
-            scan = scanner.nextLine();
+            while (scanner.hasNext()){
+                scan = scanner.nextLine();
+                System.out.println("Hello I am " + scan);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
