@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -29,24 +30,21 @@ public class JavaApplication2 {
     /**
      * @param args the command line arguments
      */
-    public static List<String> readFileInList(String fileName) throws IOException {
-
-        List<String> lines = Collections.emptyList();
-        lines
-                = Files.readAllLines(Paths.get(fileName), StandardCharsets.UTF_8); // do something
-        return lines;
-    }
-
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         System.out.println("Hello World This is TDTU");
         int counter = 0; // counter to count number of students
 
-        List l = readFileInList("data.txt");
-        Iterator<String> itr = l.iterator();
-        while (itr.hasNext()) {
-            ++counter;
-            System.out.println("Hello World I am " + itr.next());
+        try {
+            RandomAccessFile file = new RandomAccessFile("data.txt", "r");
+            String str;
+            while ((str = file.readLine()) != null) {
+                ++counter;
+                System.out.println("Hello I am " + str);
+            }
+            file.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         System.out.println("Total " + counter + " Students");
 
